@@ -1,0 +1,36 @@
+{
+  "name": "emscript",
+  "displayName": "Macrorify EMScript",
+  "description": "Syntax highlighting and autocomplete for Macrorify's EMScript language.",
+  "version": "0.0.1",
+  "publisher": "local",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": ["Programming Languages", "Snippets"],
+  "main": "./src/extension.js",
+  "activationEvents": ["onLanguage:emscript"],
+  "contributes": {
+    "languages": [
+      {
+        "id": "emscript",
+        "aliases": ["EMScript", "emscript"],
+        "extensions": [".emscript"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "emscript",
+        "scopeName": "source.emscript",
+        "path": "./syntaxes/emscript.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "emscript",
+        "path": "./snippets/emscript.code-snippets"
+      }
+    ]
+  }
+}

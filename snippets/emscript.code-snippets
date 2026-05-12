@@ -1,0 +1,72 @@
+{
+  "Variable": {
+    "prefix": "var",
+    "body": ["var ${1:name} = ${2:value}"],
+    "description": "Declare a variable"
+  },
+  "Function": {
+    "prefix": "fun",
+    "body": [
+      "fun ${1:name}(${2:params}) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Declare a function"
+  },
+  "Class": {
+    "prefix": "class",
+    "body": [
+      "class ${1:Name} {",
+      "\tinit(${2:params}) {",
+      "\t\t$0",
+      "\t}",
+      "}"
+    ],
+    "description": "Declare a class with constructor"
+  },
+  "If": {
+    "prefix": "if",
+    "body": ["if (${1:condition}) {", "\t$0", "}"],
+    "description": "If statement"
+  },
+  "If-Else": {
+    "prefix": "ifelse",
+    "body": ["if (${1:condition}) {", "\t$2", "} else {", "\t$0", "}"],
+    "description": "If-else statement"
+  },
+  "For": {
+    "prefix": "for",
+    "body": [
+      "for (var ${1:i} = 0; ${1:i} < ${2:limit}; ${1:i} = ${1:i} + 1) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "Counted for loop"
+  },
+  "While": {
+    "prefix": "while",
+    "body": ["while (${1:condition}) {", "\t$0", "}"],
+    "description": "While loop"
+  },
+  "Do-While": {
+    "prefix": "dowhile",
+    "body": ["do {", "\t$0", "} while (${1:condition})"],
+    "description": "Do-while loop"
+  },
+  "Device middle region": {
+    "prefix": "regmid",
+    "body": ["var ${1:region} = Region.deviceReg().middle()"],
+    "description": "Middle of device region"
+  },
+  "Find and click template": {
+    "prefix": "findclick",
+    "body": [
+      "var ${1:region} = Region.deviceReg().middle()",
+      "var ${2:result} = ${1:region}.find(\"${3:template}\", ${4:5000})",
+      "if (${2:result}) {",
+      "\t${2:result}.click()",
+      "}"
+    ],
+    "description": "Find a template and click it"
+  }
+}
